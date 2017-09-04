@@ -13,7 +13,7 @@ declare module 'react-pixi' {
   export { render, unmountComponentAtNode } from 'react-dom';
 
   export interface ContainerPropsType extends DisplayObjectPropsType {
-    children?: PIXI.DisplayObject[];
+    children?: PIXI.DisplayObject[] | JSX.Element[] | JSX.Element;
     width?: number;
     height?: number;
   }
@@ -48,7 +48,7 @@ declare module 'react-pixi' {
     rotation?: number;
     worldVisible?: boolean;
     mask?: PIXI.Graphics | PIXI.Sprite;
-    filters?: PIXI.Filter[] | null;
+    filters?: PIXI.Filter<any>[] | null;
   }
   export interface GraphicsPropsType extends ContainerPropsType {
     fillAlpha?: number;
