@@ -466,7 +466,7 @@ var PIXIStage = createReactClass({
 
     function rapidrender(timestamp) {
       that._timestamp = timestamp;
-      if (!this.props.disableAutoRender) {
+      if (!that.props.disableAutoRender) {
         that._rAFID = window.requestAnimationFrame( rapidrender );
       }
 
