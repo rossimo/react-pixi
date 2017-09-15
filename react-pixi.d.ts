@@ -128,6 +128,7 @@ declare module 'react-pixi' {
     preserveDrawingBuffer?: boolean;
     resolution?: number;
     transparent?: boolean;
+    disableAutoRender?: boolean;
   }
   export type DisplayObjectContainerPropsType = ContainerPropsType;
 

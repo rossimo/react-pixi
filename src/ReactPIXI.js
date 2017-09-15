@@ -461,16 +461,18 @@ var PIXIStage = createReactClass({
     ReactUpdates.ReactReconcileTransaction.release(transaction);
     this.renderStage();
 
-    var that = this;
-    that._rAFID = window.requestAnimationFrame( rapidrender );
+    if (!this.props.disableAutoRender) {
+      var that = this;
+      that._rAFID = window.requestAnimationFrame( rapidrender );
 
-    function rapidrender(timestamp) {
+      function rapidrender(timestamp) {
 
-        that._timestamp = timestamp;
-        that._rAFID = window.requestAnimationFrame( rapidrender );
+          that._timestamp = timestamp;
+          that._rAFID = window.requestAnimationFrame( rapidrender );
 
-        // render the stage
-        that.renderStage();
+          // render the stage
+          that.renderStage();
+      }
     }
   },
 
