@@ -1,4 +1,4 @@
-declare module 'react-pixi' {
+declare module '@rossimo/react-pixi' {
   import {
     Component,
     ComponentClass,
@@ -49,6 +49,18 @@ declare module 'react-pixi' {
     worldVisible?: boolean;
     mask?: PIXI.Graphics | PIXI.Sprite;
     filters?: PIXI.Filter<any>[] | null;
+    click?: Function;
+    mousedown?: Function;
+    mousemove?: Function;
+    mouseout?: Function;
+    mouseover?: Function;
+    mouseup?: Function;
+    mouseupoutside?: Function;
+    tap?: Function;
+    touchstart?: Function;
+    touchmove?: Function;
+    touchend?: Function;
+    touchendoutside?: Function;
   }
   export interface GraphicsPropsType extends ContainerPropsType {
     fillAlpha?: number;
